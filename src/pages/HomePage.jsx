@@ -1,11 +1,13 @@
 import { useState } from "react";
 import StudentCard from "../components/StudentCard";
-
+import { useNavigate } from "react-router-dom";
 import studentsData from "../assets/students.json";
 
 function HomePage() {
   // eslint-disable-next-line no-unused-vars
   const [students, setStudents] = useState(studentsData);
+
+  const navigate = useNavigate();
 
   return (
     <div className="border-2 border-rose-500 m-2">

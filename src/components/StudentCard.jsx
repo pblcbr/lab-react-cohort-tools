@@ -1,4 +1,5 @@
 import placeholderImage from "../assets/profile-icon.png";
+import { useNavigate } from "react-router-dom";
 
 function StudentCard({
   _id,
@@ -10,9 +11,11 @@ function StudentCard({
   image,
   className,
 }) {
+  const navigate = useNavigate();
   return (
       <div
-        className={`StudentCard flex justify-between items-center p-3 mb-2 bg-white shadow-sm rounded border border-gray-200 hover:bg-gray-50 ${className}`}
+        className={`StudentCard flex justify-between items-center p-3 mb-2 bg-white shadow-sm rounded border border-gray-200 hover:bg-gray-50 cursor-pointer ${className}`}
+        onClick={() => navigate(`/students/${_id}`)}
       >
         <span
           className="flex items-center justify-center"
